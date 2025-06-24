@@ -38,7 +38,7 @@ const postAdminLogin = async function (req, res) {
       req.session.user = user;
     }
     //   gui thong tin ve
-    return res.status(200).json({ email: user.email });
+    return res.status(200).json(user.email);
 
     // return res.status(200).json(user.email);
   } catch (err) {
