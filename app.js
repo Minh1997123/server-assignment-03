@@ -15,7 +15,7 @@ const app = express();
 
 const uriDb = process.env.MONGODB_URI;
 // thiet lap post de deploy
-const POST = process.env.PORT || 5000;
+const PORT = process.env.PORT || 5000;
 console.log(uriDb);
 app.use(
   cors({
@@ -70,7 +70,7 @@ app.use(oderRouter);
 mongoose
   .connect(uriDb)
   .then(() => {
-    app.listen(POST);
+    app.listen(PORT);
   })
   .catch((err) => {
     console.log(err);
