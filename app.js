@@ -44,6 +44,14 @@ app.use(
     resave: false,
     saveUninitialized: false,
     store: store,
+    cookie: {
+      // bat buoc de dung gui ss qua https
+      secure: true,
+      // cho phep gui cockie khac site
+      sameSite: "none",
+      // chi gui ss ve tu server khi da deploy
+      httpOnly: true,
+    },
   })
 );
 
@@ -76,4 +84,5 @@ mongoose
     console.log(err);
   });
 
+// tao module de deploy len vercel
 module.exports = app;
