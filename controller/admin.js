@@ -36,6 +36,7 @@ const postAdminLogin = async function (req, res) {
     // luu ss moi khi chua co ss
     if (!req.user) {
       req.session.user = user;
+      await req.session.save();
     }
     //   gui thong tin ve
     return res.status(200).json(user.email);
