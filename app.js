@@ -16,22 +16,13 @@ const app = express();
 const uriDb = process.env.MONGODB_URI;
 // thiet lap post de deploy
 const PORT = process.env.PORT || 5000;
-
-const allowedOrigins = [
-  "https://assignment-03-admin.vercel.app",
-  "https://assignment-03-client-chi.vercel.app",
-];
-
 app.use(
   cors({
     // bat buoc de nhan cookie tu http://localhost:3000 va http://localhost:3001
-    origin: function (origin, callback) {
-      if (!origin || allowedOrigins.includes(origin)) {
-        callback(null, true); // Trả về đúng origin
-      } else {
-        callback(new Error("Not allowed by CORS"));
-      }
-    },
+    origin: [
+      `https://assignment-03-admin.vercel.app`,
+      `https://assignment-03-client-chi.vercel.app`,
+    ],
     credentials: true,
   })
 );
