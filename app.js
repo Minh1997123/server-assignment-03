@@ -19,8 +19,8 @@ app.use(
   cors({
     // bat buoc de nhan cookie tu http://localhost:3000 va http://localhost:3001
     origin: [
-      `assignment-03-admin.vercel.app`,
-      `assignment-03-client-chi.vercel.app`,
+      `https://assignment-03-admin.vercel.app`,
+      `https://assignment-03-client-chi.vercel.app/`,
     ],
     credentials: true,
   })
