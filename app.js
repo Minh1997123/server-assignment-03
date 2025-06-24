@@ -14,6 +14,8 @@ const mongodbSesstion = require("connect-mongodb-session");
 const app = express();
 
 const uriDb = process.env.MONGODB_URI;
+// thiet lap post de deploy
+const POST = process.env.PORT || 5000;
 console.log(uriDb);
 app.use(
   cors({
@@ -68,7 +70,7 @@ app.use(oderRouter);
 mongoose
   .connect(uriDb)
   .then(() => {
-    app.listen(5000);
+    app.listen(POST);
   })
   .catch((err) => {
     console.log(err);
