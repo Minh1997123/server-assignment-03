@@ -77,7 +77,7 @@ app.use(oderRouter);
 mongoose
   .connect(uriDb)
   .then(() => {
-    // app.listen(PORT);
+    app.listen(PORT);
   })
   .catch((err) => {
     console.log(err);
