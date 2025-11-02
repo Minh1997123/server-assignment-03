@@ -19,9 +19,9 @@ const PORT = process.env.PORT || 5000;
 app.use(
   cors({
     // bat buoc de nhan cookie tu http://localhost:3000 va http://localhost:3001
-    origin: [
-      `https://assignment-03-admin.vercel.app`,
-      `https://assignment-03-client-chi.vercel.app`,
+    origin: process.env.ORIGIN?.split(",") || [
+      `http://localhost:3000`,
+      `http://localhost:3001`,
     ],
     credentials: true,
   })
