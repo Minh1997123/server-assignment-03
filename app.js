@@ -19,10 +19,7 @@ const PORT = process.env.PORT || 5000;
 app.use(
   cors({
     // bat buoc de nhan cookie tu http://localhost:3000 va http://localhost:3001
-    origin: process.env.ORIGIN?.split(",") || [
-      `http://localhost:3000`,
-      `http://localhost:3001`,
-    ],
+    origin: process.env.ORIGIN?.split(","),
     credentials: true,
   })
 );
